@@ -1,0 +1,316 @@
+#{h1, h2, h3, h4, h5, h6} {
+
+}
+
+// font-family: 'DIN Next Pro Light'
+// font-family: 'DIN Next Pro Regular'
+// font-family: 'DIN Next Std Cyrillic Medium'
+// font-family: 'DIN Next Slab Light'
+// font-family: 'Freight Sans Pro Book'
+
+// .alpha {
+//   font-size: $h1-font-size;
+// }
+
+// .beta {
+//   font-size: $h2-font-size;
+// }
+
+// .gamma {
+//   font-size: $h3-font-size;
+// }
+
+// .delta {
+//   font-size: $h4-font-size;
+// }
+
+// .epsilon {
+//   font-size: $h5-font-size;
+// }
+
+// .zeta {
+//   font-size: $h6-font-size;
+// }
+
+.t-caps {
+  text-transform: uppercase;
+}
+
+
+// ----
+// Sass (v3.4.7)
+// ----
+
+// config/_breakpoints.scss
+$breakpoints: (
+  small:    $small-top,
+  medium:   $small-top,
+  large:    $medium-top,
+  x-large:  $large-top
+);
+
+$type-weight: (
+    thin: 200,
+    light: 300,
+    regular: 400,
+    semi: 500,
+    bold: 700
+);
+
+// A simple type-weight mixin
+// ex. @include type-weight(strong);
+@mixin type-weight($weight) {
+  font-weight: map-get($type-weight, $weight);
+}
+
+// config/_typography.scss
+$text-sizing: (
+  centi: (
+    small: (
+      font-size: .6875rem,
+      line-height: 1.5
+    ),
+    // medium: (
+    //   font-size: .6875rem,
+    //   line-height: 1.5
+    // ),
+    large: (
+      font-size: .6875rem,
+      line-height: 1.5
+    )
+  ),
+  deci: (
+    small: (
+      font-size: .79rem,
+      line-height: 1.715
+    ),
+    // medium: (
+    //   font-size: .8125rem,
+    //   line-height: 1.75
+    // ),
+    large: (
+      font-size: .79rem,
+      line-height: 1.715
+    )
+  ),
+  base: (
+    small: (
+      font-size: 1rem,
+      line-height: 1.58
+    ),
+    // medium: (
+    //   font-size: 1.0625rem,
+    //   line-height: 1.714
+    // ),
+    large: (
+      font-size: 1rem,
+      line-height: 1.58
+    )
+  ),
+  deca: (
+    small: (
+      font-size: .79rem,
+      line-height: 1.5
+    ),
+    //   medium: (
+    //   font-size: 1.25rem,
+    //   line-height: 1.5
+    // ),
+    large: (
+      font-size: 1.266rem,
+      line-height: 1.5
+    )
+  ),
+  hecto: (
+    small: (
+      font-size: .702rem,
+      line-height: 1.5
+    ),
+    // medium: (
+    //   font-size: 1.5rem,
+    //   line-height: 1.5
+    // ),
+    large: (
+      font-size: 1.125rem,
+      line-height: 1.5
+    )
+  ),
+  kilo: (
+    small: (
+      font-size: 1.125rem,
+      line-height: 1.25
+    ),
+    // medium: (
+    //   font-size: 2.675rem,
+    //   line-height: 1.375
+    // ),
+    large: (
+      font-size: 1.802rem,
+      line-height: 1.45
+    )
+  ),
+  mega: (
+    small: (
+      font-size: 4.11rem,
+      line-height: 1.25
+    ),
+    // medium: (
+    //   font-size: 5.5rem,
+    //   line-height: 1.25
+    // ),
+    large: (
+      font-size: 6.583rem,
+      line-height: 1.5
+    )
+  )
+);
+
+// lib/functions/_responsive.scss
+@function breakpoint($breakpoint-name) {
+  @return map-get($breakpoints, $breakpoint-name);
+}
+
+// lib/functions/_typography.scss
+@function text-breakpoints-for($text-size) {
+  @return map-get($text-sizing, $text-size);
+}
+
+@function text-properties-for($text-size, $breakpoint-name) {
+  $text-breakpoints-map: text-breakpoints-for($text-size);
+  @return map-get($text-breakpoints-map, $breakpoint-name);
+}
+
+// lib/mixins/_responsive.scss
+@mixin respond-above($breakpoint-name) {
+  @media screen and (min-width: breakpoint($breakpoint-name)) {
+    @content;
+  }
+}
+
+// lib/mixins/_typography.scss
+@mixin text-size($text-size, $breakpoint-name: 'small') {
+  $text-size-properties: text-properties-for($text-size, $breakpoint-name);
+  font-size: map-get($text-size-properties, 'font-size');
+  line-height: map-get($text-size-properties, 'line-height');
+}
+
+@mixin responsive-text-size($text-size, $default-breakpoint: 'small') {
+  @include text-size($text-size, $default-breakpoint);
+
+  $text-breakpoints-map: text-breakpoints-for($text-size);
+  $text-breakpoints-keys: map-keys($text-breakpoints-map);
+
+  @each $breakpoint-name in $text-breakpoints-keys {
+    @if $breakpoint-name != $default-breakpoint and breakpoint($breakpoint-name) != null {
+      @include respond-above($breakpoint-name) {
+        @include text-size($text-size, $breakpoint-name);
+      }
+    }
+  }
+}
+
+// _typography.scss
+
+body {
+ font-family: $font-family; 
+}
+
+#{h1, h2, h3, h4, h5, h6} {
+  font-family: $font-family;
+  // font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}  
+
+h1,
+.alpha {
+  @include responsive-text-size('mega');
+  @include type-weight('semi');
+  font-family: $sans-font-family-semibold;
+  color: $header-color;
+}
+
+h2,
+.beta {
+  @include responsive-text-size('kilo');
+  @include type-weight('semi');
+  color: $header-color;
+}
+
+h3,
+.gamma {
+  @include responsive-text-size('hecto');
+  @include type-weight('bold');
+  text-transform: uppercase;
+  letter-spacing: .35rem;
+}
+
+h4,
+.delta {
+  @include responsive-text-size('deca');
+  @include type-weight('light');
+}
+
+h5,
+.epsilon {
+  @include responsive-text-size('base');
+}
+
+h6,
+.zeta {
+  @include responsive-text-size('deci');
+}
+
+p {
+  @include responsive-text-size('deca');
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.omega {
+  @include responsive-text-size('centi');
+}
+
+ul, ol, dl {
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;  
+  }
+}
+
+ul, ul li ul {
+  list-style: none;
+  margin: 0;
+}
+
+dl dt, dl dd {
+  margin: 0;
+}
+
+code {
+  font-family: $serif-font-family;
+}
+
+.serif {
+  font-family: $serif-font-family;
+}
+
+.t-spaced {
+  font-family: $sans-font-family;
+  text-transform: uppercase;
+  letter-spacing: .35rem;
+}
+
+.t-caps {
+  font-family: $sans-font-family;
+  text-transform: uppercase;
+  letter-spacing: .125rem;
+}

@@ -1,0 +1,74 @@
+.bg-primary {
+  background-color: $primary-color;
+}
+
+.bg-secondary {
+  background-color: $secondary-color;
+}
+
+.bg-alert {
+  background-color: $alert-color;
+}
+
+.bg-warning {
+  background-color: $warning-color;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-wash {
+  background-color: $primary-color;
+}
+
+.bg-wash {
+  background-color: darken($wash-color, 20%);
+}
+
+.bg-tinted {
+  background-color: darken($wash-color, 10%);
+}
+
+.bg-ghost {
+  background-color: $wash-color;
+}
+
+.bg-darken {
+  background-color: $space-color;
+
+  #{h1, h2, h3, h4, h5, h6, p, a} {
+    color: #fff;
+  }
+}
+
+.bg-deep {
+  background: url(/assets/images/bg-space.jpg) $deep-color 0 0 no-repeat;
+  background-size: cover;
+  background-color: $deep-color;
+  color: #fff;
+
+  #{h1, h2, h3, h4, h5, h6, p, a} {
+    color: #fff;
+  }
+}  
+
+.t-bright {
+  color: #fff;
+}
+
+.pattern-swatch {
+  padding: 100% 0 0 0;
+  
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

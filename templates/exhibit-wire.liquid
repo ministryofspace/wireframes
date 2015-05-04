@@ -1,0 +1,85 @@
+{% block content %}
+
+{% include "molecules/hero-exhibit" %}
+
+<section class="row" data-equalizer>
+	<div class="large-8 columns" data-equalizer-watch>
+		<div class="block">
+		<p>Bitters pour over flannel sriracha. Tofu hoodie Austin put a bird on it artisan. Cliche pork belly messenger bag, cornhole vegan mustache next level fixie chia pop-up Helvetica distillery. Raw denim yr +1 fanny pack, post-ironic Echo Park High Life gentrify narwhal. Chia ennui Carles four loko, </p>
+		<p class="text-center large-text-left no-margin"><a href="#" class="secondary button no-margin">Share</a><br/></p>
+		</div>
+	</div>
+
+	<div class="large-4 columns bg-darken" data-equalizer-watch>
+		<div class="block">
+			<p class="text-center no-margin"><a href="#" class="button">Tickets</a><br/>
+			<a href="">Special group pricing available</a></p>
+		</div>
+	</div>
+</section>
+
+<section class="content">
+	<div class="row collapse">
+		<section class="main large-8 columns">
+			<header class="h-section bg-darken">
+				<div class="row">
+					<div class="large-12 columns">
+						<h6 class="t-bright t-spaced zeta text-center large-text-left">Highlights</h6>
+					</div>
+				</div>
+			</header>
+
+			<figure class="text-center">
+				<img data-interchange="[http://placehold.it/960x720, (default)], [http://placehold.it/960x540, (medium)], [http://placehold.it/2880x1620, (large)]">
+			</figure>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<article class="slat">
+						<p>Bitters pour over flannel sriracha. Tofu hoodie Austin put a bird on it artisan. Cliche pork belly messenger bag, cornhole vegan mustache next level fixie chia pop-up Helvetica distillery. Raw denim yr +1 fanny pack, post-ironic Echo Park High Life gentrify narwhal. Chia ennui Carles four loko, </p>
+					</article>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="medium-12 large-6 columns collapse">
+					<figure class="text-center">
+						<img data-interchange="[http://placehold.it/960x720, (default)], [http://placehold.it/960x540, (medium)], [http://placehold.it/2880x1620, (large)]">
+					</figure>
+				</div>
+
+				<div class="medium-12 large-6 columns">
+					<article class="block">
+						<p>Bitters pour over flannel sriracha. Tofu hoodie Austin put a bird on it artisan. Cliche pork belly messenger bag, cornhole vegan mustache next level fixie chia pop-up Helvetica distillery. Raw denim yr +1 fanny pack, post-ironic Echo Park High Life gentrify narwhal. Chia ennui Carles four loko, </p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+	{% include "organisms/sidebar" %}
+</section>
+
+<section>
+	<header class="h-section bg-darken">
+		<div class="row">
+			<div class="large-12 columns">
+				<h6 class="t-bright t-spaced zeta text-center large-text-left">Also on Display</h6>
+			</div>
+		</div>
+	</header>
+
+	<article class="hero hero-secondary">
+	  <figure class="cover" style="background-image: url(http://placehold.it/2880x1620);">  
+	  </figure>
+
+	  <header class="hero-offset text-center large-text-left">
+	  	<hgroup class="row">
+	    <h1 class="beta">New Material found on the Moon</h1>
+	    <p class="">2000 years from now we'll have a new north star</p>
+	    </hgroup>
+	  </header>	
+	</article>
+</section>
+
+{% include "organisms/footer" %}
+{% endblock %}

@@ -1,0 +1,11 @@
+.h-section {
+  padding: .5rem 1rem;
+
+  #{h1, h2, h3, h4, h5, h6} {
+    margin: 0;
+  }
+}
+
+.h-nav {
+  padding: 1.25rem 0;
+}

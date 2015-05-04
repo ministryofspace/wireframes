@@ -1,0 +1,41 @@
+.block {
+  padding: 1rem 1.5rem 3rem;
+
+  &-footer {
+    margin-top: 1rem;
+  }
+}
+
+.block-photo {
+  position: relative;
+
+  &-figure {
+    position: relative;
+    
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .block {
+    img {
+
+    }
+  }
+}
+
+.block-type {
+  position: relative;
+
+  &-header {
+    background-color: rgba(#000, .6);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}

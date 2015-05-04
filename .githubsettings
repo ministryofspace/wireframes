@@ -1,11 +1,11 @@
 {
-  "email": "jo@slowbot.com",
+  "email": "jesse@slowbot.com",
   "gitHubPages": {
     "branch": "gh-pages",
     "guid": "self generating guid",
     "repoUrl": "https://github.com/ministryofspace/wireframes.git"
   },
   "name": "jesse",
-  "password": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvQHNsb3dib3QuY29tIiwicGFzc3dvcmQiOiJtaXN0ZXJtZWRpdW0yIn0=.Wn/RHci0D5AWpCwl8Xr0i+LqmxBhdWIVc1TlicuirTw=",
-  "username": "ministryofspace"
+  "password": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Implc3NlQHNsb3dib3QuY29tIiwicGFzc3dvcmQiOiJkcmVhbWtpZDQyISJ9.lmGF2vRXAD/whDeeStueS4jFTTAx41kgYRDlBLFvF5I=",
+  "username": "slowbot"
 }

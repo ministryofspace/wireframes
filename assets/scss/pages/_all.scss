@@ -1,0 +1,16 @@
+.home {
+  &-grid {
+
+    .clear-large {
+      @media #{$large-up} {
+        clear: left;
+      }
+    }
+
+    .clear-medium {
+      @media #{$medium-only} {
+        clear: left;
+      }
+    }
+  }
+}

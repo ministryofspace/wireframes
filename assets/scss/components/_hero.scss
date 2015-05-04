@@ -1,0 +1,54 @@
+// Full width image using background image
+
+.hero {
+  @extend %responsive-hero;
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &-offset {
+    padding: 1rem;
+    position: relative;
+
+    @media #{$medium-up} {
+      padding: 4rem 1rem;
+    }
+      
+    &.center {
+      @extend %vertical-align;
+      // width: 100%;
+    }
+
+    &.o-left {
+      @media #{$large-up} {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+
+  &-secondary {
+    @extend %responsive-hero-secondary;
+  }
+
+  #{h1, h2, h3, h4, h5, h6, p} {
+    color: #fff;
+  }  
+}
+
+// Full height and width image using background image
+
+.cover {
+  @extend %full-gradient;
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}

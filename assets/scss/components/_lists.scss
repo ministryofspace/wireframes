@@ -1,0 +1,11 @@
+.r-inline-list {
+  @include inline-list;
+
+  > li {
+    float: none;
+
+    @media #{$large-up} {
+      float: left;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.slat {
+  padding: 3rem 0;
+
+  @media #{$medium-up} {
+    padding: 4rem 3rem;
+  }
+
+  @media #{$large-up} {
+    padding: 3rem 0;
+  }
+}
+
