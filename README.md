@@ -1,5 +1,5 @@
-# wireframes
+# patterns
 
-The most advanced responsive front-end framework in the world.
+A simple empty boilerplate for a fresh start
 
 Auto commited via [Mixture](http://mixture.io)
