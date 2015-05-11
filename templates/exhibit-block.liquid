@@ -1,0 +1,56 @@
+{% layout "blocks" %}
+{% block content %}
+
+<header class="p-relative bg-darken clearfix">
+  <div class="block">
+    <h2 class="text-center">1.Header</h2>
+  </div>
+</header>
+
+<section class="bg-wash margin-down-1">
+  <div class="block" style="height: 10rem;">
+    <h2 class="text-center">2. Hero</h2>
+  </div>
+</section>
+
+<section class="row" data-equalizer>
+  <div class="large-8 columns padd-down-1" data-equalizer-watch>
+    <div class="block bg-wash">
+      <h2>3.Content: Summary</h2>
+    </div>
+  </div>
+
+  <div class="large-4 columns padd-down-1" data-equalizer-watch>
+    <div class="block bg-wash">
+      <h2>4.Aside: Ticket</h2>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="row">
+    <section class="main large-8 columns padd-down-1">
+      <div class="block bg-wash" style="height: 20rem;">
+        <h2>5.Content: Full</h2>
+      </div>
+    </section>
+
+    <section class="large-4 columns padd-down-1">
+      <aside class="block bg-wash">
+        <h2>6.Aside</h2>
+      </aside>
+    </section>  
+</section>
+
+<section>
+  <div class="block bg-wash">
+    <h2 class="text-center">7.Full</h2>
+  </div>
+</section>
+
+<footer class="p-relative bg-darken clearfix">
+  <div class="block">
+    <h2 class="text-center">8.Footer</h2>
+  </div>
+</footer>
+{% endblock %}

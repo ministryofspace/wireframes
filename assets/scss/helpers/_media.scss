@@ -1,14 +1,14 @@
 // Padding offest for background images
 %responsive-hero {
-  padding: 25% 0 0 0;
+  padding: 5% 0 0 0;
   
   @media #{$medium-up} {
-    padding: 35% 0 0 0;
+    padding: 15% 0 0 0;
   } 
 
   @media #{$large-up} {
     padding: 0;
-    height: 600px;
+    height: 400px;
   }
 
   @media #{$xlarge-up} {

@@ -1,0 +1,18 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ministry of Space</title>
+      {{ "assets/css/app.css" | asset_url | stylesheet_tag }}
+      <script src="{{ "modernizr.js" | asset_url }}"></script>
+  </head>
+  <body>
+    <div class="off-canvas-wrap content-blocks" data-offcanvas>
+      <div class="inner-wrap">
+      {% block content %}{% endblock %}
+      {% include "scripts" %}
+      </div>
+    </div> 
+  </body>
+</html>
